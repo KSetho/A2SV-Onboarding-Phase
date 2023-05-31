@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a = int(input())
+b = int(input())
+m = int(input())
+
+answer1=pow(a,b)
+print(answer1)
+
+answer2 = pow(a,b,m)
+print(answer2)
