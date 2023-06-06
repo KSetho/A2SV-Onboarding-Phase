@@ -1,0 +1,22 @@
+from collections import deque
+class Solution(object):
+    def freqAlphabets(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        i = len(s) - 1
+        decrypted = deque()
+        while i >= 0:
+            if s[i] == "#":
+                cur_elem = int(s[i - 2:i ])
+                ord_val = cur_elem + ord("a") - 1
+                decrypted.appendleft(chr(ord_val))
+                i -= 3
+            else:
+                cur_elem = int(s[i])
+                ord_val =cur_elem + ord("a") - 1
+                decrypted.appendleft(chr(ord_val))
+                i -= 1
+
+        return "".join(decrypted)
