@@ -6,7 +6,7 @@ class Solution(object):
         """
         viewed = set()
         for num in nums:
-            if num in seen:
+            if num in viewed:
                 return True
-            seen.add(num)
+            viewed.add(num)
         return False
