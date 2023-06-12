@@ -1,0 +1,30 @@
+n = int(input())
+numbers = list(map(int, input().split()))
+
+positives = []
+negatives = []
+zeros = []
+
+
+for n in numbers:
+    if n == 0:
+        zeros.append(n)
+    elif n > 0:
+        positives.append(n)
+    elif n < 0:
+        negatives.append(n)
+
+if len(positives) == 0:
+    removed_number = negatives.pop()
+    positives.append(removed_number)
+    removed_number = negatives.pop()
+    positives.append(removed_number)
+
+if len(negatives) % 2 == 0:
+    pop_element = negatives.pop()
+    zeros.append(pop_element)
+
+
+print(len(negatives), *negatives)
+print(len(positives), *positives)
+print(len(zeros), *zeros)
