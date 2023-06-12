@@ -1,0 +1,15 @@
+n = int(input())
+for _ in range(n):
+    
+    n_elem = int(input())
+    array = list(map(int, input().split()))
+    result = [0] * n_elem
+    
+    result[0] = array[0]
+    result[-1] = array[-1]
+    
+    for i in range(n_elem - 2):
+        result[i+1] = min(array[i], array[i+1])
+        
+    
+    print(" ".join(map(str, result)))
