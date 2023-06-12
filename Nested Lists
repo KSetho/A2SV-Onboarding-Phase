@@ -1,0 +1,16 @@
+if __name__ == '__main__':
+    data = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+
+        data.append([name, score])
+
+    grades = sorted(set([element[1] for element in data]))
+    second_low_grade = grades[1]
+
+
+    second_students = [element[0] for element in data if element[1] == second_low_grade]
+    second_students.sort()
+
+    print(*second_students, sep="\n")
