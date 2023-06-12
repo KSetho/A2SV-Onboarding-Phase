@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a = set(input().split())
+n = int(input())
+
+# initialize a flag variable to True
+is_strict_superset = True
+
+# iterate over the other n sets
+for i in range(n):
+    b = set(input().split())
+    # check if b is a subset of a and not equal to a
+    if not b.issubset(a) or b == a:
+        is_strict_superset = False
+        break
+
+print(is_strict_superset)
