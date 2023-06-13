@@ -1,0 +1,12 @@
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+       
+        arr_size = len(nums)
+        for x in range(arr_size + 1):
+            if x not in nums:
+                return x
+            
